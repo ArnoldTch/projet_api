@@ -1,0 +1,7 @@
+controllers:
+    resource: '../src/Controller/'
+    type: attribute
+
+api_login:
+    path: /api/login
+    controller: App\Controller\AuthController::login

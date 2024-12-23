@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit EnergyDrink{% endblock %}
+
+{% block body %}
+    <h1>Edit EnergyDrink</h1>
+
+    {{ include('energy_drink/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_energy_drink_index') }}">back to list</a>
+
+    {{ include('energy_drink/_delete_form.html.twig') }}
+{% endblock %}

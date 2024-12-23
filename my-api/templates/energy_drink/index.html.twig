@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EnergyDrink index{% endblock %}
+
+{% block body %}
+    <h1>EnergyDrink index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for energy_drink in energy_drinks %}
+            <tr>
+                <td>{{ energy_drink.id }}</td>
+                <td>{{ energy_drink.name }}</td>
+                <td>{{ energy_drink.image }}</td>
+                <td>
+                    <a href="{{ path('app_energy_drink_show', {'id': energy_drink.id}) }}">show</a>
+                    <a href="{{ path('app_energy_drink_edit', {'id': energy_drink.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_energy_drink_new') }}">Create new</a>
+{% endblock %}
